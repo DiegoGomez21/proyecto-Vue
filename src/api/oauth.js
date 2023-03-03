@@ -1,7 +1,7 @@
 // oauth.js
 
 // Traemos el método post de 'axios'
-import { post } from 'axios'
+import axios from 'axios'
 
 // Cogemos los datos de nuestra cuenta de Blizzard
 // 🔥 Recuerda que debes usar tus datos a la hora de hacer las llamadas a las APIs
@@ -34,7 +34,7 @@ function getToken () {
   // Le pasamos la URL como primer parámetro
   // Como segundo, el body, que es un FormData
   // Y la configuración como tercer argumento
-  return post(API_URL, body, config)
+  return axios.post(API_URL, body, config)
 }
 
 // Exportamos la función para poder usarla más tarde

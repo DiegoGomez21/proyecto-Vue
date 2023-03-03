@@ -1,10 +1,16 @@
-import '@babel/polyfill'
-import 'mutationobserver-shim'
 import Vue from 'vue'
-import './plugins/bootstrap-vue'
+// BootstrapVue
+import './plugins/BootstrapVue'
+
+// Vue Font-Awesome
+import './plugins/fontAwesome'
+
 import App from './App.vue'
 import router from './router'
 import store from './store'
+
+// CSS global
+import './assets/css/main.styl'
 
 Vue.config.productionTip = false
 
@@ -14,7 +20,7 @@ new Vue({
   methods: {
     // Nuestra función
     init () {
-      console.log('Hola 🌝')
+      store.dispatch('oauth/getToken')
     }
   },
   // Hook created
