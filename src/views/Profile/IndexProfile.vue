@@ -11,7 +11,7 @@ import setError from '@/mixins/setError'
 import { getApiAccount } from '@/api/search'
 
 export default {
-  name: 'ProfileView',
+  name: 'IndexProfile',
   mixins: [
     setError
   ],

@@ -42,10 +42,9 @@ export default {
           href: 'https://develop.battle.net/documentation/diablo-3/community-apis'
         },
         {
-          prefix: 'fab',
-          name: 'github',
+          classes: ['fab', 'github'],
           color: '#e4e4e4',
-          href: 'https://github.com/baumannzone'
+          href: 'https://github.com/DiegoGomez21/'
         },
         {
           classes: ['fab', 'font-awesome'],
