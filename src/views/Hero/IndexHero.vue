@@ -4,14 +4,12 @@
     <HeroDetailHeader v-if="hero" :detail="detailHeader"/>
 
     <b-row>
-      <!-- 12 columnas de 'xs' -> 'md', 8 columnas desde 'lg' hacia arriba  -->
-      <!-- En 'lg' orden 2 -->
       <b-col md="12" lg="8" order-lg="2">
         <BaseLoading v-if="isLoadingItems"/>
+        <!-- Componente de Items del personaje -->
+        <HeroItems v-if="items" :items="items"/>
       </b-col>
 
-      <!-- 12 columnas de 'xs' -> 'md', 4 columnas desde 'lg' hacia arriba -->
-      <!-- En 'lg' orden 1 -->
       <b-col md="12" lg="4" order-lg="1">
         <template v-if="hero">
           <HeroAttributes :attributes="detailStats"/>
@@ -21,10 +19,11 @@
 
     </b-row>
   </div>
- </template>
+</template>
 
 <script>
 import HeroAttributes from './HeroAttributes/Index'
+import HeroItems from './HeroItems/Index'
 import HeroSkills from './HeroSkills/Index'
 import HeroDetailHeader from './HeroDetailHeader'
 import setError from '@/mixins/setError'
@@ -38,7 +37,8 @@ export default {
     BaseLoading,
     HeroDetailHeader,
     HeroAttributes,
-    HeroSkills
+    HeroSkills,
+    HeroItems
   },
   data () {
     return {
