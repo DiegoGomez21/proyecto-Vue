@@ -2,7 +2,7 @@
 
 Desarrollado por **Diego Gomez**
 
-##User para probar la aplicación
+### User para probar la aplicación
 
 > ChucKn0body#1385
 > Region: US
