@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-portrait-wrapper mb-5 mb-sm-0">
+  <div class="hero-portrait-wrapper mb-5 mb-sm-0 hover-cursor-pointer" @click="goToHero(hero.id)">
     <div class="bg-secondary d-flex justify-content-center p-3 p-sm-0">
       <!-- Bg Img -->
       <div :class="heroClass"></div>
@@ -21,9 +21,12 @@
 </template>
 
 <script>
+import goToHero from '@/mixins/goToHero'
 import { formatNumber } from '@/filters/numeral'
 export default {
   name: 'TopHero',
+  mixins: [goToHero],
+  filters: { formatNumber },
   props: {
     hero: {
       type: Object,
@@ -35,8 +38,7 @@ export default {
       const gender = this.hero.gender === 0 ? 'male' : 'female'
       return `hero-${this.hero.classSlug} ${gender}`
     }
-  },
-  filters: { formatNumber }
+  }
 }
 </script>
 
