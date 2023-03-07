@@ -11,7 +11,7 @@
       </h5>
       <div class="d-flex justify-content-between border-top border-secondary pt-2 align-items-center mt-2">
         <small class="elite-kills">
-          <span class="text-monospace">{{ hero.kills.elites }}</span>
+          <span class="text-monospace">{{ hero.kills.elites | formatNumber }}</span>
           Elite kills
         </small>
         <small class="level-circle" :class="{'text-danger': hero.dead}"> {{ hero.level }} </small>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { formatNumber } from '@/filters/numeral'
 export default {
   name: 'TopHero',
   props: {
@@ -34,7 +35,8 @@ export default {
       const gender = this.hero.gender === 0 ? 'male' : 'female'
       return `hero-${this.hero.classSlug} ${gender}`
     }
-  }
+  },
+  filters: { formatNumber }
 }
 </script>
 
